@@ -37,6 +37,8 @@ namespace Matchers {
 #ifdef __clang__
 #    pragma clang diagnostic push
 #    pragma clang diagnostic ignored "-Wnon-virtual-dtor"
+#elif _MSC_VER >= 1925
+#    pragma warning(disable: 5204)
 #endif
 
         template<typename ObjectT>
@@ -55,6 +57,8 @@ namespace Matchers {
 
 #ifdef __clang__
 #    pragma clang diagnostic pop
+#elif _MSC_VER >= 1925
+#    pragma warning(default: 5204)
 #endif
 
         template<typename T>
